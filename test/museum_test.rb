@@ -18,4 +18,10 @@ class MuseumTest < Minitest::Test
     assert_equal "Denver Museum of Nature and Science", dmns.name
   end
 
+  def test_it_has_exhibits
+    dmns = Museum.new("Denver Museum of Nature and Science")
+
+    assert_equal [], dmns.exhibits
+  end
+
 end

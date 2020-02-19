@@ -20,4 +20,15 @@ class Museum
     patrons << patron
   end
 
+  def patrons_by_exhibit_interest
+    pbei = {}
+    exhibits.each do |exhibit|
+      pbei[exhibit] = []
+      patrons.each do |patron|
+        pbei[exhibit] << patron if recommend_exhibits(patron).include?(exhibit)
+      end
+    end
+    pbei
+  end
+
 end

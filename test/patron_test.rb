@@ -10,4 +10,10 @@ class PatronTest < Minitest::Test
     assert_instance_of Patron, patron_1
   end
 
+  def test_it_returns_name
+    patron_1 = Patron.new("Bob", 20)
+
+    assert_equal "Bob", patron_1.name
+  end
+
 end
